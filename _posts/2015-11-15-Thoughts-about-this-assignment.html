@@ -1,0 +1,52 @@
+---
+layout: post
+comments: true
+title:  Tankar om denna uppgift
+date:   2015-11-15 18:00:00
+categories: assignment
+---
+<h4 class="blue">Pre-compiling CSS</h4>
+<p>Det här var första gången som jag använt pre-compiled CSS och i princip har jag bara använt de färdiga SCSS-filer som
+fanns förberedda samt lagt till en egen SCSS-fil där jag la in några justeringar, mest för att testa vad som hände för att vara ärlig.
+Jag tycker att det var lite besvärligt att hålla reda på vad som stod i de (fyra) olika SCSS-filerna. Om jag hade
+skrivit SCSS-filerna själv hade jag förmodligen haft bättre kontroll på innehållet. De förberedda SCSS-filerna var uppdelade
+efter kategori eller motsvarande. Det är naturligtvis enklare att byta ut en hel fil för att på så sätt ändra på en hel "kategori" på en gång
+mot att editera delar av en CSS-fil, men då ska man som sagt också veta vad filerna innehåller.</p>
+<h4 class="blue">Static site generators</h4>
+<p>Det var väldigt tidskrävande att sätta sig in i hur den arbetsmiljö som vi skulle använda fungerade, timmar av felsökande
+(och tonnvis av frustration) men när man väl får ordning på static site generatorn, i fortsättningen kallad SSG, så är den
+väldigt bekväm att jobba med. Det går fort att lägga till nya sidor eftersom grunden hämtas automatiskt. Nu kan man i och
+för sig skapa HTML-dokument att använda som mall för nya sidor men vid ändringar är SSG:n överlägsen tidsmässigt. Ett
+problem som jag stött på är att SSG:n har en tendens att hänga upp sig på något teckenfel eller liknande vilket är
+konstigt speciellt när jag har provat att kopiera HTML-kod som har fungerat felfritt tidigare och dessutom
+gått genom HTML-kontroller på olika webbtjänster. Det verkar som om SSG:n har problem med å, ä och ö.</p>
+<h4 class="blue">Robot.txt</h4>
+<p>Robot.txt är ett text-dokument som ger instruktioner angående tillhörande webbplats till webb-robotar. Dessa instruktioner
+består i princip av vilka robotar som har eller inte har rätt att besöka webbplatsen samt vilka kataloger och filer de
+inte har rätt att besöka. Det går inte att ange vilka kataloger och filer som de har rätt att besöka. "Illasinnade"
+robotar ignorerar troligen dessa regler då dessa inte är tvingande. Jag har nekat besöksrätt till alla kataloger utom
+_posts (bloggar) samt roten.</p>
+<h4 class="blue">Humans.txt</h4>
+<p>Humans.txt är ett sätt att presentera människorna som har jobbat eller jobbar med en webbplats samt eventuellt lite
+fakta om webbplatsen, vilka standarder som följts, vilka verktyg som används etc. Jag har skrivit en väldigt kort
+beskrivning med mitt namn och lite fakta om webbplatsen samt tackat mina lärare (det kändes lite tomt i filen). En länk
+till humans.txt finns på presentationssidan.</p>
+<h4 class="blue">Implementation of comments</h4>
+<p>Jag har använt Disqus för att besökare ska kunna kommentera mina bloggar. Jag läste på Disqus webbplats hur man skulle
+göra och klipp och klistrade in koden direkt i mina bloggar. Eventuellt skulla jag kunna försöka lägga in koden i en
+layout, får jag tid ska jag försöka med det.</p>
+<h4 class="blue">Open Graph</h4>
+<p>MER TEXT</p>
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//sitejkzx.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>

@@ -1,20 +1,10 @@
     /* TEAM */
-    Your title: Your name.
-    Site: email, link to a contact form, etc.
-    Twitter: your Twitter username.
-    Location: City, Country.
-
-                        [...]
+    Jan Karlsson.
+    Location: Sweden.
 
     /* THANKS */
-    Name: name or url
-
-
-                        [...]
-
+    My teachers
 
     /* SITE */
-    Last update: YYYY/MM/DD
-    Standards: HTML5, CSS3,..
-    Components: Modernizr, jQuery, etc.
-    Software: Software used for the development
+    Last update: At the moment it is updated every day.
+    Standards: HTML5, CSS3,
