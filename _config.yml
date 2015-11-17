@@ -1,9 +1,8 @@
 # Site settings
-title: sitejkzx
+title: jkzx
 email: jk222zx@student.lnu.se
 description: > # this means to ignore newlines until "baseurl:"
-  This site was, at least at first, made as a part of an examination for a programming course.
-  Perhaps it will used for something else later.
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jk222zx.github.io" # the base hostname & protocol for your site
 twitter_username: No twitter - sorry.
