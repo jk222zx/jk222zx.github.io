@@ -1,0 +1,40 @@
+body {
+    position: relative;
+    background: #32C832;
+}
+
+.hidden {
+    display: none;
+}
+
+#menuBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+#newComment, #editComment, #changeRoomDialogTextArea{
+    font-size: 16px;
+    font-style: normal;
+    font-family: "Times New Roman", Georgia, Times, serif;
+}
+
+#dataTable, #calcTable {
+    font-size: 16px;
+    font-style: normal;
+    font-family: "Times New Roman", Georgia, Times, serif;
+}
+
+#graph {
+    background: white;
+    width: auto;
+    height: 500px;
+}
+
+.menuBarButton {
+    float: none;
+}
+
+.dropMenu {
+}

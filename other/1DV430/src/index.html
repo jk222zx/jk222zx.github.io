@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!--DROP-projekt Version 1.0-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+        <link id="uiMinCss" rel="stylesheet" type="text/css"
+              href="../vendors/jquery-ui/themes/le-frog/jquery-ui.min.css">
+        <link id="themeCss" rel="stylesheet" type="text/css" href="../vendors/jquery-ui/themes/le-frog/theme.css">
+        <link rel="stylesheet" type="text/css" href="../vendors/primeui/primeui.min.css">
+        <link rel="stylesheet" type="text/css" href="../vendors/primeui/font-awesome/css/font-awesome.min.css" />
+
+        <script src="../vendors/jquery/jquery-2.2.3.min.js"></script>
+        <script src="../vendors/jquery-ui/jquery-ui.min.js"></script>
+        <script src="../vendors/primeui/primeui.min.js"></script>
+        <script src="../vendors/filesaver/FileSaver.js"></script>
+        <script src="../vendors/is/is.min.js"></script>
+        <script src="../vendors/flot/jquery.flot.min.js"></script>
+        <script src="../vendors/flot/jquery.flot.time.min.js"></script>
+    </head>
+    <body>
+<!--        <ul id="menuBar">-->
+        <div id="menuBar">
+            <button class="menuBarButton" id="btnMenuFile">File</button>
+            <button class="menuBarButton" id="btnMenuEdit">Data</button>
+            <button class="menuBarButton" id="btnMenuCalc">Calc</button>
+            <button class="menuBarButton" id="btnMenuGraph">Graph</button>
+            <button class="menuBarButton" id="btnMenuHelp">Help</button>
+            <button class="menuBarButton" id="btnMenuQuit">Quit</button>
+            <ul class="dropMenu" id="dropMenuFile">
+                <li><span class="ui-icon ui-icon-folder-open"></span><a id="btn-open">Open file</a>
+                    <input type="file" id="hiddenInput" class="hidden" ></li>
+                <li><span class="ui-icon ui-icon-disk"></span><a id="btn-save">Save file</a></li>
+                <li><span class=""></span><a>Visual Settings</a>
+                    <ul>
+                        <li><span class=""></span><a>Change theme</a>
+                            <ul>
+                                <li><a id="btn-base">Base</a></li>
+                                <li><a id="btn-black-tie">Black Tie</a></li>
+                                <li><a id="btn-blitzer">Blitzer</a></li>
+                                <li><a id="btn-cupertino">Cupertino</a></li>
+                                <li><a id="btn-dark-hive">Dark Hive</a></li>
+                                <li><a id="btn-dot-luv">Dot Luv</a></li>
+                                <li><a id="btn-eggplant">Eggplant</a></li>
+                                <li><a id="btn-excite-bike">Excite Bike</a></li>
+                                <li><a id="btn-flick">Flick</a></li>
+                                <li><a id="btn-hot-sneaks">Hot Sneaks</a></li>
+                                <li><a id="btn-humanity">Humanity</a></li>
+                                <li><a id="btn-le-frog">Le Frog</a></li>
+                                <li><a id="btn-mint-choc">Mint Choc</a></li>
+                                <li><a id="btn-overcast">Overcast</a></li>
+                                <li><a id="btn-pepper-grinder">Pepper Grinder</a></li>
+                                <li><a id="btn-redmond">Redmond</a></li>
+                                <li><a id="btn-smoothness">Smoothness</a></li>
+                                <li><a id="btn-south-street">South-Street</a></li>
+                                <li><a id="btn-start">Start</a></li>
+                                <li><a id="btn-sunny">Sunny</a></li>
+                                <li><a id="btn-swanky-purse">Swanky Purse</a></li>
+                                <li><a id="btn-trontastic">Trontastic</a></li>
+                                <li><a id="btn-ui-darkness">UI Darkness</a></li>
+                                <li><a id="btn-ui-lightness">UI Lightness</a></li>
+                                <li><a id="btn-vader">Vader</a></li>
+                            </ul>
+                        </li>
+                        <li><span class=""></span><a id="btn-background">Change background</a></li>
+                        <li><span class=""></span><a id="btn-restoreDefault">Restore default</a></li>
+                        <li><span class=""></span><a id="btn-restoreSettings">RESTORE theme and background from local
+                            storage</a></li>
+                        <li><span class=""></span><a id="btn-saveSettings">SAVE theme and background in local
+                            storage</a></li>
+                        <li><span class=""></span><a id="btn-clearSettings">CLEAR settings (clear local storage)</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="dropMenu" id="dropMenuEdit">
+                <li><span class="ui-icon ui-icon-plus"></span><a id="btn-newPost">Add new post</a></li>
+                <li><span class=""></span><a id="btn-editPosts">Edit posts</a></li>
+                <li><span class="ui-icon ui-icon-trash"></span><a id="btn-deletePosts">Delete posts</a></li>
+                <li><span class=""></span><a>Edit table</a>
+                    <ul>
+<!--                        <li><span class=""></span><a>Number of rows</a>
+                            <ul>
+                                <li><span class=""></span><a id="btn-10rows">10 Rows</a></li>
+                                <li><span class=""></span><a id="btn-20rows">20 Rows</a></li>
+                                <li><span class=""></span><a id="btn-30rows">30 Rows</a></li>
+                                <li><span class=""></span><a id="btn-40rows">40 Rows</a></li>
+                            </ul>
+                        </li>-->
+                        <li><span class=""></span><a>Add</a>
+                            <ul>
+                                <li><span class=""></span><a id="btn-addRoom">Add room</a></li>
+                                <li><span class=""></span><a id="btn-addTime">Add time</a></li>
+                                <li><span class=""></span><a id="btn-addPreC">Add cleanliness before</a></li>
+                                <li><span class=""></span><a id="btn-addPostC">Add cleanliness after</a></li>
+                            </ul>
+                        </li>
+                        <li><span class=""></span><a>Remove</a>
+                            <ul>
+                                <li><span class=""></span><a id="btn-removeRoom">Remove room</a></li>
+                                <li><span class=""></span><a id="btn-removeTime">Remove time</a></li>
+                                <li><span class=""></span><a id="btn-removePreC">Remove cleanliness before</a></li>
+                                <li><span class=""></span><a id="btn-removePostC">Remove cleanliness after</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class=""></span><a id="btn-SaveOpenPosts">Save/Restore Posts</a>
+                    <ul>
+                        <li><span class=""></span><a id="btn-restorePosts">RESTORE post-settings from local
+                            storage</a></li>
+                        <li><span class=""></span><a id="btn-savePosts">SAVE post-settings in local
+                            storage</a></li>
+                        <li><span class=""></span><a id="btn-clearPosts">CLEAR post-settings in local
+                            storage</a></li>
+                    </ul>
+                </li>
+                <li><span class=""></span><a id="btn-data-SH">Data show/hide</a></li>
+            </ul>
+            <ul class="dropMenu" id="dropMenuCalc">
+                <li><span class=""></span><a id="btn-calc-SH">Calc show/hide</a></li>
+            </ul>
+            <ul class="dropMenu" id="dropMenuGraph">
+                <li><span class=""></span><a id="btn-graphs">Graphs</a>
+                    <ul id="jQueryAppend1">
+                    </ul>
+                </li>
+                <li><span class="ui-icon ui-icon-image"></span><a id="btn-graph-SH">Graph show/hide</a></li>
+            </ul>
+            <ul class="dropMenu" id="dropMenuHelp">
+                <li><span class=""></span><a id="btn-help">No content at the moment.</a></li>
+            </ul>
+            <ul class="dropMenu" id="dropMenuQuit">
+                <li><span class="ui-icon ui-icon-closethick"></span><a id="btn-quit">Quit</a></li>
+            </ul>
+        </div>
+
+        <!--Data table starts here. (In the function $("#dataTable").puidatatable the content is defined.) -->
+        <div id="dataTable"></div>
+
+        <!--Calculation table starts here. (In the function $("#calcTable").puidatatable the content is defined.) -->
+        <div id="calcTable"></div>
+
+        <!--Graph starts here.-->
+        <div id="graph" ></div>
+
+        <!--Dialogs starts here.-->
+        <div id="openFileDialog" title="Replace, append or cancel?">
+            <p id="openFileDialogText">There are already data in the program.<br>
+                To append the data from the file to the data in the program choose APPEND.<br>
+                To replace the data in the program with the data in the file choose REPLACE.
+            </p>
+        </div>
+
+        <div id="saveFileDialog" title="Nothing to save!">
+            <p id="saveFileDialogText">There are no data to save!</p>
+        </div>
+
+        <div id="newPostDialog" title="Add new post.">
+            <div id="newDatePickerDiv">
+                <p id="newDatePickerP">Date:</p>
+                <p><input type="text" size="10" readonly id="newDatePicker"></p>
+            </div>
+            <div id="newLocalDiv">
+                <p id="newLocalP">Room:</p>
+                <p><select name="local" id="newLocal" autofocus="true">
+                        <option class="newRoom">Sovrum</option>
+                        <option class="newRoom">Övre rum</option>
+                        <option class="newRoom">Hall</option>
+                        <option class="newRoom">Kök</option>
+                        <option class="newRoom">Vardagsrum</option>
+                    </select>
+                </p>
+            </div>
+            <div id="newTimeDiv">
+                <p id="newTimeP">Time:</p>
+                <p>
+                    <select name="time" id="newTime">
+                        <option class="newTime">10</option>
+                        <option class="newTime">15</option>
+                        <option class="newTime">20</option>
+                        <option class="newTime">30</option>
+                        <option class="newTime">40</option>
+                        <option class="newTime">45</option>
+                        <option class="newTime">50</option>
+                        <option class="newTime">60</option>
+                        <option class="newTime">75</option>
+                        <option class="newTime">90</option>
+                    </select>
+                </p>
+            </div>
+            <div id="newPreCDiv">
+                <p id="newPreCP">Cleanliness Before (%):</p>
+                <p>
+                    <select name="PreC" id="newPreC">
+                        <option class="newPreC">0</option>
+                        <option class="newPreC">10</option>
+                        <option class="newPreC">20</option>
+                        <option class="newPreC">25</option>
+                        <option class="newPreC">30</option>
+                        <option class="newPreC">40</option>
+                        <option class="newPreC">50</option>
+                        <option class="newPreC">60</option>
+                        <option class="newPreC">70</option>
+                        <option class="newPreC">75</option>
+                        <option class="newPreC">80</option>
+                        <option class="newPreC">90</option>
+                        <option class="newPreC">100</option>
+                    </select>
+                </p>
+            </div>
+            <div id="newPostCDiv">
+                <p id="newPostCP">Cleanliness After (%):</p>
+                <p>
+                    <select name="PostC" id="newPostC">
+                        <option class="newPostC">0</option>
+                        <option class="newPostC">10</option>
+                        <option class="newPostC">20</option>
+                        <option class="newPostC">25</option>
+                        <option class="newPostC">30</option>
+                        <option class="newPostC">40</option>
+                        <option class="newPostC">50</option>
+                        <option class="newPostC">60</option>
+                        <option class="newPostC">70</option>
+                        <option class="newPostC">75</option>
+                        <option class="newPostC">80</option>
+                        <option class="newPostC">90</option>
+                        <option class="newPostC">100</option>
+                    </select>
+                </p>
+            </div>
+            <div id="newCommentDiv">
+                <p id="newCommentP">Comment:</p>
+                <textarea id="newComment" rows="10" cols="40" placeholder="Comment"></textarea>
+            </div>
+        </div>
+
+        <div id="editPostsDialog" title="Edit posts.">
+            <div id="editDatePickerDiv">
+                <p id="editDatePickerP">Datum:</p>
+                <p><input type="text" size="10" id="editDatePicker"></p>
+            </div>
+            <div id="editLocalDiv">
+                <p id="editLocalP">Lokal:</p>
+                <p><select name="local" id="editLocal" autofocus="true">
+                    <option class="editRoom">Sovrum</option>
+                    <option class="editRoom">Övre rum</option>
+                    <option class="editRoom">Hall</option>
+                    <option class="editRoom">Kök</option>
+                    <option class="editRoom">Vardagsrum</option>
+                </select>
+                </p>
+            </div>
+            <div id="editTimeDiv">
+                <p id="editTimeP">Städtid:</p>
+                <p>
+                    <select name="time" id="editTime">
+                        <option class="editTime">10</option>
+                        <option class="editTime">15</option>
+                        <option class="editTime">20</option>
+                        <option class="editTime">30</option>
+                        <option class="editTime">40</option>
+                        <option class="editTime">45</option>
+                        <option class="editTime">50</option>
+                        <option class="editTime">60</option>
+                        <option class="editTime">75</option>
+                        <option class="editTime">90</option>
+                    </select>
+                </p>
+            </div>
+            <div id="editPreCDiv">
+                <p id="editPreCP">Cleanliness Before (%):</p>
+                <p>
+                    <select name="PreC" id="editPreC">
+                        <option class="editPreC">0</option>
+                        <option class="editPreC">10</option>
+                        <option class="editPreC">20</option>
+                        <option class="editPreC">25</option>
+                        <option class="editPreC">30</option>
+                        <option class="editPreC">40</option>
+                        <option class="editPreC">50</option>
+                        <option class="editPreC">60</option>
+                        <option class="editPreC">70</option>
+                        <option class="editPreC">75</option>
+                        <option class="editPreC">80</option>
+                        <option class="editPreC">90</option>
+                        <option class="editPreC">100</option>
+                    </select>
+                </p>
+            </div>
+            <div id="editPostCDiv">
+                <p id="editPostCP">Cleanliness After (%):</p>
+                <p>
+                    <select name="PostC" id="editPostC">
+                        <option class="editPostC">0</option>
+                        <option class="editPostC">10</option>
+                        <option class="editPostC">20</option>
+                        <option class="editPostC">25</option>
+                        <option class="editPostC">30</option>
+                        <option class="editPostC">40</option>
+                        <option class="editPostC">50</option>
+                        <option class="editPostC">60</option>
+                        <option class="editPostC">70</option>
+                        <option class="editPostC">75</option>
+                        <option class="editPostC">80</option>
+                        <option class="editPostC">90</option>
+                        <option class="editPostC">100</option>
+                    </select>
+                </p>
+            </div>
+            <div id="editCommentDiv">
+                <p id="editCommentP">Kommentarer:</p>
+                <textarea id="editComment" rows="10" cols="40" placeholder="Comment"></textarea>
+            </div>
+        </div>
+
+        <div id="deletePostsDialog" title="Delete posts.">
+            <p id="deletePostsDialogText"></p>
+        </div>
+
+        <div id="infoDialog" title="infoPostTitle">
+            <p id="infoDialogText"></p>
+        </div>
+
+        <div id="addRoomDialog" title="Add room">
+            <p>New room:</p>
+            <p><input type="text" size="20" id="addRoomInput" autofocus></p>
+            <p id="addRoomDialogText">Current rooms.</p>
+            <textarea id="addRoomDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+        </div>
+
+        <div id="addTimeDialog" title="Add time">
+            <p>New time:</p>
+            <p><input type="text" size="20" id="addTimeInput" autofocus></p>
+            <p id="addTimeDialogText">Current times.</p>
+            <textarea id="addTimeDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+        </div>
+
+        <div id="addPreCDialog" title="Add cleanliness before">
+            <p>New cleanliness before:</p>
+            <p><input type="text" size="20" id="addPreCInput" autofocus></p>
+            <p id="addPreCDialogText">Current cleanliness before (%).</p>
+            <textarea id="addPreCDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+        </div>
+
+        <div id="addPostCDialog" title="Add cleanliness after">
+            <p>New cleanliness after:</p>
+            <p><input type="text" size="20" id="addPostCInput" autofocus></p>
+            <p id="addPostCDialogText">Current cleanliness after (%).</p>
+            <textarea id="addPostCDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+        </div>
+
+        <div id="removeRoomDialog" title="Remove room">
+            <textarea id="removeRoomDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+            <p><select name="local" id="removeRoomInput" autofocus="true"></select></p>
+        </div>
+
+        <div id="removeTimeDialog" title="Remove time">
+            <textarea id="removeTimeDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+            <p><select name="local" id="removeTimeInput" autofocus="true"></select></p>
+        </div>
+
+        <div id="removePreCDialog" title="Remove cleanliness before">
+            <textarea id="removePreCDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+            <p><select name="local" id="removePreCInput" autofocus="true"></select></p>
+        </div>
+
+        <div id="removePostCDialog" title="Remove cleanliness after">
+            <textarea id="removePostCDialogTextArea" rows="10" cols="20" placeholder=""></textarea>
+            <p><select name="local" id="removePostCInput" autofocus="true"></select></p>
+        </div>
+
+        <div id="backgroundDialog" title="Select background color.">
+            <div id="backgroundDiv">
+                <p id="backgroundP">Red, green, blue. 0-255</p>
+                <input type="number" id="backgroundRed" min="0" max="255">
+                <input type="number" id="backgroundGreen" min="0" max="255">
+                <input type="number" id="backgroundBlue" min="0" max="255">
+            </div>
+        </div>
+
+        <div id="quitDialog1" title="Exit">
+            <p id="quitDialog1Text"></p>
+        </div>
+
+        <div id="quitDialogFirefox" title="Exit dialog">
+            <p id="quitDialogFireFoxText"></p>
+        </div>
+
+        <div id="quitDialog2" title="Confirm exit">
+            <p id="quitDialog2Text">There are unsaved changes, do you want to quit anyway?</p>
+        </div>
+
+        <script src="../resources/js/central.js"></script>
+        <script src="../resources/js/gui.js"></script>
+        <script src="../resources/js/dialogs.js"></script>
+        <script src="../resources/js/file.js"></script>
+        <script src="../resources/js/graph.js"></script>
+        <script src="../resources/js/logic.js"></script>
+        <script src="../resources/js/calc.js"></script>
+    </body>
+</html>
