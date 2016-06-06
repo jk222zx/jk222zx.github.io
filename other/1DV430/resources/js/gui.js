@@ -515,9 +515,9 @@ $( document ).ready(function() {
     });
 
     $("#btn-restoreDefault").click(function () {
-        $("#uiMinCss").attr("href", "../vendors/jquery-ui/themes/" + central.v.defaultTheme + "/jquery-ui.min.css");
-        $("#themeCss").attr("href", "../vendors/jquery-ui/themes/" + central.v.defaultTheme + "/theme.css");
-        $("body").css("background-color", central.v.defaultBackground);
+        $("#uiMinCss").attr("href", central.v.uiMinCss);
+        $("#themeCss").attr("href", central.v.themeCss);
+        $("body").css("background-color", central.v.body);
         $("#dropMenuFile").hide();
     });
 

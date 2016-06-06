@@ -1,6 +1,7 @@
 body {
     position: relative;
-    background: #32C832;
+    background: #FAC819; /*Sunny yellow*/
+/*    background: #32C832; *//*Le-frog green*/
 }
 
 .hidden {

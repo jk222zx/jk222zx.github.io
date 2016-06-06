@@ -127,8 +127,9 @@ var central = {
         savedSettings : {},
         savedPostsJSONObject : "DROP_savedPosts",
         savedPosts : {},
-        defaultTheme : "le-frog",
-        defaultBackground : "#32C832",
+        uiMinCss : $("#uiMinCss").attr("href"),
+        themeCss : $("#themeCss").attr("href"),
+        body : $("body").css("background-color"),
         unsavedDataExists : false,
         dataExists : false,                     //
         functionWriteTableFileCalled : false, //An (ugly) fix to solve a problem with unwanted multiply writings to
